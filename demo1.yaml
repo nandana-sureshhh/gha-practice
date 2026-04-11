@@ -1,0 +1,14 @@
+name: basic-ci
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-demo
+        uses: actions/checkout@v4
+
+      - name: print-demo
+        run: echo "this is a print demo"
