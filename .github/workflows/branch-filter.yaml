@@ -1,4 +1,5 @@
-name: branch_filter
+name: Branch Filter
+
 on:
   push:
     branches: [main]
@@ -6,7 +7,6 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    
     steps:
-      -run: echo "main branch psuh only"
-
+      - name: print-message
+        run: echo "main branch push only"
