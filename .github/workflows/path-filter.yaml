@@ -1,0 +1,14 @@
+name: 04-Path-Filter
+on: 
+  push:
+    paths:
+      - 'src/**'
+
+job:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggered for src" 
+
+      
+    
