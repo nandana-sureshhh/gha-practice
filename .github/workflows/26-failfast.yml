@@ -1,0 +1,12 @@
+name: 26-Fail-Fast
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        node: [16,18]
+    steps:
+      - run: echo "Testing"

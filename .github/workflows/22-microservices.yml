@@ -1,0 +1,17 @@
+name: 22-Microservices
+on:
+  push:
+    paths:
+      - 'service-a/**'
+      - 'service-b/**'
+
+jobs:
+  service-a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Service A"
+
+  service-b:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Service B"

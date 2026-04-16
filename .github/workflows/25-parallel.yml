@@ -1,0 +1,11 @@
+name: 25-Parallel
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1,2,3]
+    steps:
+      - run: echo "Shard ${{ matrix.shard }}"

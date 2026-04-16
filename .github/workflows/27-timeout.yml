@@ -1,0 +1,9 @@
+name: 27-Timeout
+on: [push]
+
+jobs:
+  timeout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: sleep 300

@@ -1,0 +1,14 @@
+name: 08-Multi-Job
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Test"

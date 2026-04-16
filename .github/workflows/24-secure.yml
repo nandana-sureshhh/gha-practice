@@ -1,0 +1,8 @@
+name: 24-Secure
+on: [push]
+
+jobs:
+  secure:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -H "Authorization: Bearer ${{ secrets.TOKEN }}" https://example.com

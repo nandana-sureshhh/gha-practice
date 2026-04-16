@@ -1,4 +1,3 @@
-console.log("hello");
-console.log("update");
-console.log("another update");
+hello
+update
 another change

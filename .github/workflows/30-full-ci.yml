@@ -1,0 +1,29 @@
+name: 30-Full-CI
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+      - run: npm run build
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm test
+
+  quality:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Quality"
+
+  ready:
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Ready"

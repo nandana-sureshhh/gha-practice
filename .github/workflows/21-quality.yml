@@ -1,0 +1,23 @@
+name: 21-Quality-Gate
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+      - run: npm run build
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm test
+
+  lint:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run lint

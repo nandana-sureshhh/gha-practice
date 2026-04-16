@@ -1,0 +1,21 @@
+name: 23-Build-Once
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "build" > file.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app
+          path: file.txt
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: app
+      - run: cat file.txt
