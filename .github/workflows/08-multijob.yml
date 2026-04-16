@@ -11,4 +11,4 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Test"
+      - run: echo "Test Done"
